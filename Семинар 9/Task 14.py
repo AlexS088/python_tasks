@@ -1,0 +1,10 @@
+st = input()
+st = list(st)
+mini = st.pop(0)
+maxi = st.pop(-1)
+maxi, mini = int(maxi), int(mini)
+st.insert(-1,mini)
+st.insert(0,maxi)
+for i in range (len(st)):
+    st[i] = str(st[i])
+print(' '.join(st))

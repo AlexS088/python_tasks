@@ -1,0 +1,1 @@
+print(*[ i for i in list(input()) if i in "0123456789"], sep = "")
