@@ -2,6 +2,8 @@ st = input().split(',')
 for i in range(len(st)):
     st[i] = int(st[i])
 def validation(st: list) -> bool:
+    if len(st) != 3:
+        return False
     for i in range(len(st)):
         if isinstance(st[i], str):
             return False
