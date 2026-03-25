@@ -1,17 +1,16 @@
 st = input().split(',')
-for i in range(len(st)):
-    st[i] = int(st[i])
 def validation(st: list) -> bool:
+    all_nums = "0123456789"
     if len(st) != 3:
         return False
     for i in range(len(st)):
-        if isinstance(st[i], str):
-            return False
-        elif isinstance(st[i], float):
+        if st[i] not in all_nums:
             return False
         
 if validation(st) != False:
     def solving(st: list) -> int:
+        for i in range(len(st)):
+            st[i] = int(st[i])
         result = 0
         for i in range(len(st) -1):
             if st[i] == st[i+1] - 1:
@@ -24,5 +23,4 @@ if validation(st) == False:
     print("Invalid input")
 else:
     print(solving(st))
-print("Hello, World!")
 
