@@ -1,9 +1,9 @@
 def solve_word(st: str) -> str:
    result = ""
-   upper =[i for i in range(len(st)) if st[i].isupper()]
-   lower = [i for i in  range(len(st)) if st[i].isupper()]
+   upper = [i for i in range(len(st)) if st[i].isupper()]
+   lower = [i for i in  range(len(st)) if st[i].islower()]
    if len(upper) > len(lower):
-      for i in range(st):
+      for i in range(len(st)):
          if i not in upper:
             result += st[i].upper()
          else:
@@ -14,7 +14,7 @@ def solve_word(st: str) -> str:
                 result += st[i].lower()
             else:
                 result += st[i]
-   else:
+   elif len(upper) == len(lower):
        return st.lower()
    return result
 print(solve_word("CODe"))
